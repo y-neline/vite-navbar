@@ -1,0 +1,9 @@
+.image-carousel {
+    height: 55vh;
+    
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+
+}
