@@ -11,6 +11,10 @@
         {
             "src": "https://picsum.photos/seed/img3/1600/400",
             "alt": "Image 3 for carousel"
+        },
+        {
+            "src": "https://picsum.photos/seed/img4/1600/400",
+            "alt": "Image 4 for carousel"
         }
     ]
 }

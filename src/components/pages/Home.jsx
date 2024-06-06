@@ -1,5 +1,5 @@
 import React from 'react'
-import { Carousel } from '../Carousel/Carousel'
+import Carousel from '../Carousel/Carousel'
 import "./Home.css"
 
 import {slides} from "../../data/carouselData.json"
@@ -7,7 +7,7 @@ import {slides} from "../../data/carouselData.json"
 export const Home = () => {
   return (
     <div className='image-carousel'>
-      <Carousel data={slides} />
+      <Carousel slides={slides} interval ={3000} />
     </div>
   )
 }
