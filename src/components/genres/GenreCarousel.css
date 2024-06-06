@@ -9,25 +9,22 @@
   .genre {
     background-color: #fff;
     border-radius: 4px;
-    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
     padding: 16px;
-    display: flex; /* Make genre a flex container */
-    justify-content: space-between; /* Align items horizontally */
-    display: flex; /* Maintain vertical stacking for books */
-  justify-content: space-between; /* Align genre name and "View All" */
-  min-height: 300px;
-  flex-basis: 1600px; /* Set fixed width for each genre */
-}
+    min-height: 300px;
+    flex-direction: column; /* Stack elements vertically */
+  }
+  
 
-.genre > div:first-child { /* Target first child element (genre name & View All) */
-  display: flex;
-  justify-content: space-between; /* Distribute horizontally within genre */
-  width: 100%; /* Ensure full width for proper alignment */
-}
+  .genre > div:first-child {
+    display: flex;
+    justify-content: space-between;
+    
+  }
+  
   
   .genre h2 {
-    font-size: 1.2rem;
-    margin-bottom: 12px;
+    font-size: 1.7rem;
+    margin-bottom: 20px;
   }
   
   .genre a {
@@ -35,26 +32,28 @@
     color: #007bff;
     font-weight: bold;
     /* Removed margin-top for better positioning */
-    display: block;
+    margin-top: -5px;
+    
     
   }
   
   .books-container {
     display: flex;
-    gap: 10px;
+    gap: 20px;
     /* Adjust width to fit 4 books side-by-side */
-    width: calc(100% - 200px); /* Adjust as needed */
+    width: calc(100%); /* Adjust as needed */
   }
   
   .book {
     width: calc(25% - 5px); /* 4 books = 25% each (adjust based on design) */
     display: flex;
     flex-direction: row;
-    align-items: center;
     padding: 10px;
     border: 1px solid #ddd;
     border-radius: 4px;
     background-color: #F4F4FF;
+    height: 250px;
+    position: relative;
   }
   
   .book img {
@@ -64,14 +63,14 @@
   }
   
   .book-info {
-    margin-top: 10px;
-    text-align: center;
+    text-align: left;
     width: 50%; /* Adjust width as needed */
     padding: 5px; /* Add some padding for readability */
+    flex: 1;
   }
   
   .book-info h3 {
-    font-size: 16px;
+    font-size: 22px;
     margin-bottom: 5px;
   }
   
@@ -79,5 +78,13 @@
   .book-info span {
     font-size: 13px;
     color: #333;
+  }
+  .book-info .price {
+    font-weight: bold;
+    color: #b12a1b; /* Set a different color for the price */ /* Position the price at the bottom */
+    position: absolute; /* Position the price at the bottom */
+  bottom: 10px; /* Adjust positioning as needed */
+   /* Position to the left edge of the book container */
+   font-size: 16px;
   }
   

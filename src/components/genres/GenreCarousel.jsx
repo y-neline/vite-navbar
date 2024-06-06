@@ -8,7 +8,7 @@ const Book = ({ title, author, price, imageUrl }) => {
             <div className="book-info">
                 <h3>{title}</h3>
                 <p>{author}</p>
-                <span>{price}</span>
+                <span className='price'>{price}</span>
             </div>
         </div>
     );
@@ -16,17 +16,20 @@ const Book = ({ title, author, price, imageUrl }) => {
 
 const Genre = ({ title, books, viewAllLink }) => {
     return (
-        <div className="genre">
-            <h2>{title}</h2>
-            <div className="books-container">
-                {books.map((book) => (
-                    <Book key={book.title} {...book} />
-                ))}
-            </div>
-            <a href={viewAllLink}>View All</a>
+      <div className="genre">
+        <div className="genre-header">
+          <h2>{title}</h2>
+          <a href={viewAllLink}>View All</a>
         </div>
+        <div className="books-container">
+          {books.map((book) => (
+            <Book key={book.title} {...book} />
+          ))}
+        </div>
+      </div>
     );
-};
+  };
+  
 
 const Bookstore = () => {
     const bestSellers = [
@@ -116,14 +119,20 @@ const Bookstore = () => {
     return (
         <div className="bookstore">
             <Genre
-                title="Best Sellers"
+                title="Best Seller"
                 books={bestSellers}
                 viewAllLink="/best-sellers"
             />
 
-            <Genre title="Classics" books={classics} viewAllLink="/classics" />
+            <Genre 
+                title="Classics" 
+                books={classics} 
+                viewAllLink="/classics" />
 
-            <Genre title="Children" books={children} viewAllLink="/children" />
+            <Genre 
+                title="Children" 
+                books={children} 
+                viewAllLink="/children" />
         </div>
     );
 };
