@@ -1,0 +1,83 @@
+.bookstore {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    padding: 60px;
+    /* Adjust border color as needed */
+  }
+  
+  .genre {
+    background-color: #fff;
+    border-radius: 4px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    padding: 16px;
+    display: flex; /* Make genre a flex container */
+    justify-content: space-between; /* Align items horizontally */
+    display: flex; /* Maintain vertical stacking for books */
+  justify-content: space-between; /* Align genre name and "View All" */
+  min-height: 300px;
+  flex-basis: 1600px; /* Set fixed width for each genre */
+}
+
+.genre > div:first-child { /* Target first child element (genre name & View All) */
+  display: flex;
+  justify-content: space-between; /* Distribute horizontally within genre */
+  width: 100%; /* Ensure full width for proper alignment */
+}
+  
+  .genre h2 {
+    font-size: 1.2rem;
+    margin-bottom: 12px;
+  }
+  
+  .genre a {
+    text-decoration: none;
+    color: #007bff;
+    font-weight: bold;
+    /* Removed margin-top for better positioning */
+    display: block;
+    
+  }
+  
+  .books-container {
+    display: flex;
+    gap: 10px;
+    /* Adjust width to fit 4 books side-by-side */
+    width: calc(100% - 200px); /* Adjust as needed */
+  }
+  
+  .book {
+    width: calc(25% - 5px); /* 4 books = 25% each (adjust based on design) */
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    background-color: #F4F4FF;
+  }
+  
+  .book img {
+    width: 50%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .book-info {
+    margin-top: 10px;
+    text-align: center;
+    width: 50%; /* Adjust width as needed */
+    padding: 5px; /* Add some padding for readability */
+  }
+  
+  .book-info h3 {
+    font-size: 16px;
+    margin-bottom: 5px;
+  }
+  
+  .book-info p,
+  .book-info span {
+    font-size: 13px;
+    color: #333;
+  }
+  

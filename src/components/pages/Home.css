@@ -1,3 +1,9 @@
+.home {
+    display: flex;
+    flex-direction: column;
+    z-index: 1;
+
+}
 .image-carousel {
     height: 55vh;
     
