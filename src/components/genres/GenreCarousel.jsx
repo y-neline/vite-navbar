@@ -1,9 +1,11 @@
-import React from "react";
+import React, { useState } from "react";
 import "./GenreCarousel.css";
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 
 const Book = ({ title, author, price, imageUrl }) => {
+
+    
     return (
         <div className="book">
             <img src={imageUrl} alt={title} />
@@ -13,10 +15,13 @@ const Book = ({ title, author, price, imageUrl }) => {
                 <span className="price">{price}</span>
             
                 <h3>{author}: {title}</h3> {/* Combine author and title */}
+                <button className="add-to-cart">В корзину</button>  {/* New button */}
                 
             </div>
 
             <FavoriteBorderOutlinedIcon className="wishlist-icon" />
+            
+           
             
             
         </div>
