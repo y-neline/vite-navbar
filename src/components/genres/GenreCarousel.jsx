@@ -6,16 +6,18 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 const Book = ({ title, author, price, imageUrl }) => {
     return (
         <div className="book">
-            <FavoriteBorderOutlinedIcon className="wishlist-icon" />{" "}
             <img src={imageUrl} alt={title} />
-            <div className="book-info">
             
-            {/* Moved icon outside */}
-                <h3>{title}</h3>
-                <p>{author}</p>
+            
+            <div className="book-info">
                 <span className="price">{price}</span>
+            
+                <h3>{author}: {title}</h3> {/* Combine author and title */}
                 
             </div>
+
+            <FavoriteBorderOutlinedIcon className="wishlist-icon" />
+            
             
         </div>
     );
@@ -63,6 +65,13 @@ const Bookstore = () => {
             price: "$16.50",
             imageUrl: "../../../public/images/ato.jpeg",
         },
+        {
+            title: "Бегущий в Лабиринте. Испытание огнем. Лекарство от смерти",
+            author: "Дэшнер Дж.",
+            price: "5170₸",
+            imageUrl: "../../../public/images/maze-runner.jpg",
+        },
+        
         // ... other best sellers
     ];
 
@@ -84,6 +93,12 @@ const Bookstore = () => {
             author: "Jane Austen",
             price: "$5.59",
             imageUrl: "../../../public/images/pride-prejudice.jpg",
+        },
+        {
+            title: "Fahrenheit 451",
+            author: "Ray Bradbury",
+            price: "$8.36",
+            imageUrl: "../../../public/images/fahrenheit.jpg",
         },
         {
             title: "Fahrenheit 451",
@@ -119,6 +134,12 @@ const Bookstore = () => {
             price: "$4.99",
             imageUrl: "../../../public/images/ugly-duckling.jpg",
         },
+        {
+            title: "The Ugly Duckling",
+            author: "Hans Christian Andersen",
+            price: "$4.99",
+            imageUrl: "../../../public/images/ugly-duckling.jpg",
+        }
         // ... other children's books
     ];
 
