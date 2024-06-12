@@ -1,90 +1,135 @@
 .bookstore {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 20px;
-    padding: 60px;
-    /* Adjust border color as needed */
-  }
-  
-  .genre {
-    background-color: #fff;
-    border-radius: 4px;
-    padding: 16px;
-    min-height: 300px;
-    flex-direction: column; /* Stack elements vertically */
-  }
+  display: flex;
+  flex-wrap: wrap;
+  gap: 20px;
+  padding: 60px;
+  /* Adjust border color as needed */
+}
+
+.genre {
+  background-color: #fff;
+  border-radius: 4px;
+  padding: 16px;
+  min-height: 300px;
+  flex-direction: column;
+  /* Stack elements vertically */
+}
+
+
+.genre>div:first-child {
+  display: flex;
+  justify-content: space-between;
+
+}
+
+
+.genre h2 {
+  font-size: 1.7rem;
+  margin-bottom: 20px;
+}
+
+.genre a {
+  text-decoration: none;
+  color: #007bff;
+  font-weight: bold;
+  /* Removed margin-top for better positioning */
+  margin-top: -5px;
+
+
+}
+
+.books-container {
+  display: flex;
+  gap: 20px;
+  /* Adjust width to fit 4 books side-by-side */
+  width: calc(100%);
+  /* Adjust as needed */
+}
+
+.book {
+  width: calc(25% - 5px);
+  /* 4 books = 25% each (adjust based on design) */
+  display: flex;
+  flex-direction: row;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  background-color: #F4F4FF;
+  height: 250px;
+  position: relative;
+}
+
+.book img {
+  width: 50%;
+  height: 100%;
+  object-fit: cover;
+}
+
+.wishlist-icon {
+  position: absolute;
+  /* Absolute positioning for top right corner */
+  top: 10px;
+  /* Adjust positioning as needed */
+  right: 10px;
+  /* Adjust positioning as needed */
+  color: #ccc;
+  /* Adjust color as needed */
+  cursor: pointer;
+  /* Indicate clickable icon */
+}
+
+.book-info {
+  text-align: left;
+  width: 50%;
+  /* Adjust width as needed */
+  padding: 5px;
+  /* Add some padding for readability */
+  flex: 1;
+  /* Enable flexbox for wrapping */
   
 
-  .genre > div:first-child {
-    display: flex;
-    justify-content: space-between;
-    
-  }
-  
-  
-  .genre h2 {
-    font-size: 1.7rem;
-    margin-bottom: 20px;
-  }
-  
-  .genre a {
-    text-decoration: none;
-    color: #007bff;
-    font-weight: bold;
-    /* Removed margin-top for better positioning */
-    margin-top: -5px;
-    
-    
-  }
-  
-  .books-container {
-    display: flex;
-    gap: 20px;
-    /* Adjust width to fit 4 books side-by-side */
-    width: calc(100%); /* Adjust as needed */
-  }
-  
-  .book {
-    width: calc(25% - 5px); /* 4 books = 25% each (adjust based on design) */
-    display: flex;
-    flex-direction: row;
-    padding: 10px;
-    border: 1px solid #ddd;
-    border-radius: 4px;
-    background-color: #F4F4FF;
-    height: 250px;
-    position: relative;
-  }
-  
-  .book img {
-    width: 50%;
-    height: 100%;
-    object-fit: cover;
-  }
-  
-  .book-info {
-    text-align: left;
-    width: 50%; /* Adjust width as needed */
-    padding: 5px; /* Add some padding for readability */
-    flex: 1;
-  }
-  
-  .book-info h3 {
-    font-size: 22px;
-    margin-bottom: 5px;
-  }
-  
-  .book-info p,
-  .book-info span {
-    font-size: 13px;
-    color: #333;
-  }
-  .book-info .price {
-    font-weight: bold;
-    color: #b12a1b; /* Set a different color for the price */ /* Position the price at the bottom */
-    position: absolute; /* Position the price at the bottom */
-  bottom: 10px; /* Adjust positioning as needed */
-   /* Position to the left edge of the book container */
-   font-size: 16px;
-  }
-  
+
+}
+
+
+
+
+.book-info h3 {
+  font-size: 20px;
+  margin-bottom: 5px;
+}
+
+.book-info p,
+.book-info span {
+  font-size: 13px;
+  color: #333;
+}
+
+/* .book-buttons {
+ font-weight: bold;
+ color: #b12a1b; 
+ position: absolute; 
+ bottom: 10px; 
+ left: calc(50% + 10px);
+ 
+ width: calc(100% - 20px);
+ font-size: 16px;
+ } */
+
+.book-info .price {
+  font-weight: bold;
+  color: #b12a1b;
+  /* Set a different color for the price */
+  /* Position the price at the bottom */
+  position: absolute;
+  /* Position the price at the bottom */
+  bottom: 10px;
+  /* Adjust positioning as needed */
+  /* Position to the left edge of the book container */
+  font-size: 16px;
+}
+
+.book-info .book-buttons {
+  position: absolute;
+  bottom: 10px;
+}

@@ -1,41 +1,43 @@
 import React from "react";
 import "./GenreCarousel.css";
 
-import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteBorderOutlinedIcon from '@mui/icons-material/FavoriteBorderOutlined';
 
 const Book = ({ title, author, price, imageUrl }) => {
     return (
-        <div className="book">
-            <FavoriteBorderOutlinedIcon className="wishlist-icon" />{" "}
-            <img src={imageUrl} alt={title} />
-            <div className="book-info">
-            
-            {/* Moved icon outside */}
-                <h3>{title}</h3>
-                <p>{author}</p>
-                <span className="price">{price}</span>
-                
-            </div>
-            
+      <div className="book">
+        <FavoriteBorderOutlinedIcon className="wishlist-icon" /> {/* Moved icon outside */}
+        <img src={imageUrl} alt={title} />
+        <div className="book-info">
+          <h3>{title}</h3>
+          <p>{author}</p>
+          {/* <span className="price">{price}</span> */}
+        
+          <div className="book-buttons">
+            <button>Buy {price}</button>
+          </div> 
         </div>
+      </div>
     );
-};
+  };
+  
 
 const Genre = ({ title, books, viewAllLink }) => {
     return (
-        <div className="genre">
-            <div className="genre-header">
-                <h2>{title}</h2>
-                <a href={viewAllLink}>View All</a>
-            </div>
-            <div className="books-container">
-                {books.map((book) => (
-                    <Book key={book.title} {...book} />
-                ))}
-            </div>
+      <div className="genre">
+        <div className="genre-header">
+          <h2>{title}</h2>
+          <a href={viewAllLink}>View All</a>
         </div>
+        <div className="books-container">
+          {books.map((book) => (
+            <Book key={book.title} {...book} />
+          ))}
+        </div>
+      </div>
     );
-};
+  };
+  
 
 const Bookstore = () => {
     const bestSellers = [
@@ -130,9 +132,15 @@ const Bookstore = () => {
                 viewAllLink="/best-sellers"
             />
 
-            <Genre title="Classics" books={classics} viewAllLink="/classics" />
+            <Genre 
+                title="Classics" 
+                books={classics} 
+                viewAllLink="/classics" />
 
-            <Genre title="Children" books={children} viewAllLink="/children" />
+            <Genre 
+                title="Children" 
+                books={children} 
+                viewAllLink="/children" />
         </div>
     );
 };
