@@ -2,14 +2,13 @@
   display: flex;
   flex-wrap: wrap;
   gap: 20px;
-  padding: 60px;
+  padding: 50px;
   /* Adjust border color as needed */
 }
 
 .genre {
   background-color: #fff;
   border-radius: 4px;
-  padding: 16px;
   min-height: 300px;
   flex-direction: column;
   /* Stack elements vertically */
@@ -40,10 +39,12 @@
 
 .books-container {
   display: flex;
-  gap: 20px;
+  gap: 30px;
   /* Adjust width to fit 4 books side-by-side */
   width: calc(100%);
   /* Adjust as needed */
+  padding: 5px;
+  
 }
 
 .book {
@@ -58,8 +59,9 @@
   border-radius: 4px;
   background-color: #F4F4FF;
   height: 350px;
-  width: 300px;
+  width: 285px;
   position: relative;
+  
 }
 
 .book img {
@@ -69,18 +71,7 @@
   margin: 0 auto;
 }
 
-.wishlist-icon {
-  position: absolute;
-  /* Absolute positioning for top right corner */
-  top: 10px;
-  /* Adjust positioning as needed */
-  right: 10px;
-  /* Adjust positioning as needed */
-  color: #ccc;
-  /* Adjust color as needed */
-  cursor: pointer;
-  /* Indicate clickable icon */
-}
+
 
 .book-info {
   text-align: left;
@@ -91,6 +82,13 @@
   flex-direction: column; /* Stack elements vertically */
   justify-content: space-between; /* Space out content vertically */
 }
+
+.button-container {  /* New styles for button container */
+  display: flex;
+  justify-content:space-between; /* Space buttons horizontally */
+  width: 100%; /* Match book-info width */
+}
+
 
 .book-info .price {
   font-weight: bold;
@@ -109,9 +107,14 @@
 
 
 .book-info h3 {
-  font-size: 13px;
-  margin-bottom: 15px;
-  margin-top: 15px;
+  white-space: nowrap; /* Prevent wrapping */
+  overflow: hidden;  /* Hide excess content */
+  text-overflow: ellipsis; /* Add ellipsis (...) */
+  width: 100%; /* Ensure full width for potential ellipsis */
+  /* Adjust font size as needed to accommodate longer titles in two lines */
+  font-size: 12.5px; /* Example adjustment */
+  line-height: 1.2; /* Adjust line height for better two-line display */
+  margin-bottom: 5px; /* Add some margin for separation */
 }
 
 .book-info p,
@@ -132,19 +135,35 @@
  } */
 
 
- .book-info button.add-to-cart {
+ .button-container button.add-to-cart {
 
 
   background-color: #e95241; /* Adjust button color */
   color: #fff; /* Adjust button text color */
-  padding: 5px 10px; /* Adjust padding */
+  padding: 8px 60px; /* Adjust padding */
   border: none; /* Remove border for cleaner look */
-  border-radius: 4px;
+  border-radius: 7px;
   cursor: pointer; /* Indicate clickable button */
   position: absolute;
-  position: absolute;
   bottom: 10px;
-  margin: auto;
+  order: 1;
+  left: 30px;
+}
+
+.button-container .wishlist-icon {
+  position: absolute;
+  /* Absolute positioning for top right corner */
+  bottom: 15px;
+  /* Adjust positioning as needed */
+
+  /* Adjust positioning as needed */
+  color: #ccc;
+  /* Adjust color as needed */
+  cursor: pointer;
+  /* Indicate clickable icon */
+  order: 2;
+  z-index: 0;    
+  right: 30px;
 }
 /* 
 .book-info .book-buttons {

@@ -15,11 +15,14 @@ const Book = ({ title, author, price, imageUrl }) => {
                 <span className="price">{price}</span>
             
                 <h3>{author}: {title}</h3> {/* Combine author and title */}
-                <button className="add-to-cart">В корзину</button>  {/* New button */}
-                
+
+                <div className="button-container"> {/* New container for buttons */}
+                    <button className="add-to-cart">В корзину</button>  {/* New button */}
+                    <FavoriteBorderOutlinedIcon className="wishlist-icon" />
+                </div>
             </div>
 
-            <FavoriteBorderOutlinedIcon className="wishlist-icon" />
+            
             
            
             
