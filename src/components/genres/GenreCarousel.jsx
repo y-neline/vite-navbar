@@ -2,7 +2,7 @@ import React, { useState } from "react";
 import "./GenreCarousel.css";
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import { bestSellers, classics, children } from "./Books"; // Import from new file
+import { bestSellers, classics, children } from "./Books";
 
 const Book = ({ title, author, price, imageUrl }) => {
     return (
@@ -14,12 +14,9 @@ const Book = ({ title, author, price, imageUrl }) => {
                 <h3>
                     {author}: {title}
                 </h3>{" "}
-                {/* Combine author and title */}
                 <div className="button-container">
                     {" "}
-                    {/* New container for buttons */}
                     <button className="add-to-cart">В корзину</button>{" "}
-                    {/* New button */}
                     <FavoriteBorderOutlinedIcon className="wishlist-icon" />
                 </div>
             </div>

@@ -18,7 +18,7 @@
   .carousel-slide {
     width: 100%; /* Each image takes up full width of carousel */
     height: 100%;
-    object-fit: cover; /* Adjust image fitting as needed */
+    object-fit: cover; /* Adjust image fitting as needed */ 
   }
   
   .carousel-controls {

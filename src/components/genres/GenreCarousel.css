@@ -3,6 +3,7 @@
   flex-wrap: wrap;
   gap: 20px;
   padding: 50px;
+  
   /* Adjust border color as needed */
 }
 
@@ -41,7 +42,7 @@
   display: flex;
   gap: 30px;
   /* Adjust width to fit 4 books side-by-side */
-  width: calc(100%);
+  
   /* Adjust as needed */
   padding: 5px;
   
@@ -86,7 +87,6 @@
 .button-container {  /* New styles for button container */
   display: flex;
   justify-content:space-between; /* Space buttons horizontally */
-  width: 100%; /* Match book-info width */
 }
 
 
@@ -110,7 +110,7 @@
   white-space: nowrap; /* Prevent wrapping */
   overflow: hidden;  /* Hide excess content */
   text-overflow: ellipsis; /* Add ellipsis (...) */
-  width: 100%; /* Ensure full width for potential ellipsis */
+  
   /* Adjust font size as needed to accommodate longer titles in two lines */
   font-size: 12.5px; /* Example adjustment */
   line-height: 1.2; /* Adjust line height for better two-line display */
@@ -140,14 +140,14 @@
 
   background-color: #e95241; /* Adjust button color */
   color: #fff; /* Adjust button text color */
-  padding: 8px 60px; /* Adjust padding */
+  padding: 8px 65px; /* Adjust padding */
   border: none; /* Remove border for cleaner look */
   border-radius: 7px;
   cursor: pointer; /* Indicate clickable button */
   position: absolute;
   bottom: 10px;
   order: 1;
-  left: 30px;
+  left: 25px;
 }
 
 .button-container .wishlist-icon {
@@ -163,7 +163,7 @@
   /* Indicate clickable icon */
   order: 2;
   z-index: 0;    
-  right: 30px;
+  right: 25px;
 }
 /* 
 .book-info .book-buttons {
