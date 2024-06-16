@@ -65,6 +65,20 @@
   
 }
 
+.bookstore .book:hover {
+  transform: scale(1.02); /* Slightly enlarge the image on hover (optional) */
+  transition: all 0.2s ease-in-out; /* Smooth transition effect */
+
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  border-color: #cccccc; /* More prominent border color on hover */
+}
+
+.bookstore .book img:hover {
+  cursor: pointer; /* Indicate clickable element */
+}
+
+
+
 .book img {
   width: 70%;
   height: 70%;
@@ -140,14 +154,17 @@
 
   background-color: #e95241; /* Adjust button color */
   color: #fff; /* Adjust button text color */
-  padding: 8px 65px; /* Adjust padding */
+  padding: 8px 75px; /* Adjust padding */
   border: none; /* Remove border for cleaner look */
   border-radius: 7px;
   cursor: pointer; /* Indicate clickable button */
   position: absolute;
   bottom: 10px;
   order: 1;
-  left: 25px;
+}
+
+.bookstore .button-container button.add-to-cart:hover {
+  background-color: #d74a38; /* Darker shade of the original background color */
 }
 
 .button-container .wishlist-icon {
@@ -163,8 +180,15 @@
   /* Indicate clickable icon */
   order: 2;
   z-index: 0;    
-  right: 25px;
+  right: 20px;
 }
+
+.bookstore .button-container .wishlist-icon:hover {
+  color: #999; /* Change color on hover */
+  transform: scale(1.1); /* Optional: Slightly enlarge the icon on hover */
+  transition: all 0.2s ease-in-out; /* Smooth transition effect */
+}
+
 /* 
 .book-info .book-buttons {
   position: absolute;

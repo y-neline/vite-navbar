@@ -26,7 +26,7 @@ export const bestSellers = [
     {
         title: "Бегущий в Лабиринте. Испытание огнем. Лекарство от смерти",
         author: "Дэшнер Дж.",
-        price: "5170₸",
+        price: "5 170₸",
         imageUrl: "../../../public/images/maze-runner.jpg",
     },
     
@@ -59,10 +59,10 @@ export const classics = [
         imageUrl: "../../../public/images/fahrenheit.jpg",
     },
     {
-        title: "Fahrenheit 451",
-        author: "Ray Bradbury",
-        price: "$8.36",
-        imageUrl: "../../../public/images/fahrenheit.jpg",
+        title: "Финансист",
+        author: "Теодор Драйзер",
+        price: "2 164₸",
+        imageUrl: "../../../public/images/finance.jpg",
     },
     // ... other classics
 ];
@@ -93,10 +93,10 @@ export const children = [
         imageUrl: "../../../public/images/ugly-duckling.jpg",
     },
     {
-        title: "The Ugly Duckling",
-        author: "Hans Christian Andersen",
-        price: "$4.99",
-        imageUrl: "../../../public/images/ugly-duckling.jpg",
+        title: "Чарли и шоколадная фабрика",
+        author: "Роальд Даль",
+        price: "2 699₸",
+        imageUrl: "../../../public/images/charlie.jpeg",
     }
     // ... other children's books
 ];
