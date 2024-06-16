@@ -1,3 +1,4 @@
+// GenreCarousel.jsx
 import React, { useState } from "react";
 import "./GenreCarousel.css";
 

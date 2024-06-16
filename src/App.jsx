@@ -1,7 +1,8 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/Navbar";
-import { Account, Wishlist, Home, Cart } from "./components/pages";
+import { Account, Home, Cart } from "./components/pages";
+import { Wishlist } from "./components/pages/Wishlist/Wishlist";
 
 function App() {
     return (

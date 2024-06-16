@@ -1,4 +1,4 @@
 export * from "./Home"
-export * from "./Wishlist"
+export * from "./Wishlist/Wishlist"
 export * from "./Account"
 export * from "./Cart"
