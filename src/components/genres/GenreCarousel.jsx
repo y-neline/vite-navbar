@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./GenreCarousel.css";
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
+import FavoriteIcon from '@mui/icons-material/Favorite';
 import { bestSellers, classics, children } from "./Books";
 
 const Book = ({ title, author, price, imageUrl }) => {
@@ -15,15 +16,27 @@ const Book = ({ title, author, price, imageUrl }) => {
                     {author}: {title}
                 </h3>{" "}
                 <div className="button-container">
-                    {" "}
-                    <button className="add-to-cart">В корзину</button>{" "}
-                    <FavoriteBorderOutlinedIcon className="wishlist-icon" />
-                </div>
-            </div>
+          <button className="add-to-cart">В корзину</button>
+          <WishlistItemIcon /> {/* Call the WishlistItemIcon component */}
         </div>
-    );
+      </div>
+    </div>
+  );
 };
 
+const WishlistItemIcon = () => {
+  const [isFilled, setIsFilled] = useState(false); // State to track icon state
+
+  const handleClick = () => {
+    setIsFilled(!isFilled); // Toggle icon state on click
+  };
+
+  return isFilled ? (
+    <FavoriteIcon className="wishlist-icon" onClick={handleClick} style={{ color: 'red' }}/>
+  ) : (
+    <FavoriteBorderOutlinedIcon className="wishlist-icon" onClick={handleClick} />
+  );
+};
 const Genre = ({ title, books, viewAllLink }) => {
     return (
         <div className="genre">
