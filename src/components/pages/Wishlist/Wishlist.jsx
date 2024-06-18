@@ -1,27 +1,36 @@
-// WishlistPage.jsx
+// Wishlist.jsx
 import React from 'react';
+import './Wishlist.css';
 import { useWishlist } from './WishlistContext';
-import './Wishlist.css'; // Create this file to style your wishlist page
 
 const Wishlist = () => {
-  const { wishlist, removeFromWishlist } = useWishlist();
+  const { wishlist, removeFromWishlist, clearWishlist } = useWishlist();
 
   return (
-    <div className="wishlist-page">
-      <h2>Your Wishlist</h2>
+    <div className="wishlist-container">
+      <div className="wishlist-header">
+        <h2>Your Wishlist</h2>
+        <button className="clear-wishlist" onClick={clearWishlist}>
+          Remove All
+        </button>
+      </div>
       <div className="wishlist-books">
-        {wishlist.map((book) => (
-          <div key={book.title} className="wishlist-book">
-            <img src={book.imageUrl} alt={book.title} />
-            <div className="wishlist-book-info">
-              <h3>{book.author}: {book.title}</h3>
-              <span className="price">{book.price}</span>
-              <div className="wishlist-button-container">
-                <button className="wishlist-add-to-cart" onClick={() => removeFromWishlist(book.title)}>Remove from Wishlist</button>
+        {wishlist.length > 0 ? (
+          wishlist.map((book) => (
+            <div key={book.title} className="wishlist-book">
+              <img src={book.imageUrl} alt={book.title} />
+              <div className="wishlist-book-info">
+                <h3>{book.author}: {book.title}</h3>
+                <span className="wishlist-price">{book.price}</span>
+                <button onClick={() => removeFromWishlist(book.title)}>
+                  Remove from Wishlist
+                </button>
               </div>
             </div>
-          </div>
-        ))}
+          ))
+        ) : (
+          <p>Your wishlist is empty.</p>
+        )}
       </div>
     </div>
   );
