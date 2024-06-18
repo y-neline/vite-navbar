@@ -66,7 +66,8 @@
     font-weight: bold;
     color: #b12a1b;
     font-size: 18px;
-    margin-top: 5px;
+    margin-bottom: 10px;
+    margin-top: 5px;  /* Add margin for separation */
   }
   
   .wishlist-book-info h3 {
@@ -87,7 +88,7 @@
   .wishlist-button-container button.wishlist-add-to-cart {
     background-color: #e95241;
     color: #fff;
-    padding: 8px 50px;
+    padding: 8px 60px;
     border: none;
     border-radius: 7px;
     cursor: pointer;

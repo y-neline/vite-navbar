@@ -1,5 +1,5 @@
 export * from "./Home"
 export * from "./Wishlist/Wishlist"
 export * from "./Account"
-export * from "./Cart"
+export * from "./Cart/Cart"
 export * from "./Wishlist/WishlistContext"

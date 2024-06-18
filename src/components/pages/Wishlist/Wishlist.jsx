@@ -14,8 +14,8 @@ const Wishlist = () => {
           <div key={book.title} className="wishlist-book">
             <img src={book.imageUrl} alt={book.title} />
             <div className="wishlist-book-info">
-              <span className="price">{book.price}</span>
               <h3>{book.author}: {book.title}</h3>
+              <span className="price">{book.price}</span>
               <div className="wishlist-button-container">
                 <button className="wishlist-add-to-cart" onClick={() => removeFromWishlist(book.title)}>Remove from Wishlist</button>
               </div>
