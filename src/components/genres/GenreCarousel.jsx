@@ -38,7 +38,7 @@ const Book = ({ title, author, price, imageUrl }) => {
       <div className="book-info">
         
         <h3>{author}: {title}</h3>
-        <span className="price">{price}</span>
+        <span className="price">{price} ₸</span>
         <div className="button-container">
           <button className={isInCart ? "remove-from-cart" : "add-to-cart"} onClick={handleCartClick}>
             {isInCart ? "Убрать из корзины" : "В корзину"}

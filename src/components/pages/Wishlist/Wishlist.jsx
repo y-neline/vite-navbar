@@ -21,7 +21,7 @@ const Wishlist = () => {
               <img src={book.imageUrl} alt={book.title} />
               <div className="wishlist-book-info">
                 <h3>{book.author}: {book.title}</h3>
-                <span className="wishlist-price">{book.price}</span>
+                <span className="wishlist-price">{book.price} ₸</span>
                 <button onClick={() => removeFromWishlist(book.title)}>
                   Remove from Wishlist
                 </button>
