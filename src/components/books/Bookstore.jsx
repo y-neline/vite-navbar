@@ -1,12 +1,14 @@
-// GenreCarousel.jsx
-import React, { useState } from "react";
+// Bookstore.jsx
+import React from "react";
+import { Link } from "react-router-dom";
 import "./Bookstore.css";
-import { useWishlist } from "../pages/Wishlist/WishlistContext"; // Import the wishlist context
-import { useCart } from "../pages/Cart/CartContext"; // Import the cart context
+import { useWishlist } from "../pages/Wishlist/WishlistContext"; 
+import { useCart } from "../pages/Cart/CartContext"; 
 
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import { bestSellers, classics, children } from "./BooksData";
+
 
 const Book = ({ title, author, price, imageUrl }) => {
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
@@ -59,7 +61,7 @@ const Genre = ({ title, books, viewAllLink }) => {
     <div className="genre">
       <div className="genre-header">
         <h2>{title}</h2>
-        <a href={viewAllLink}>View All</a>
+        <Link to={viewAllLink}>View All</Link> {/* Replace <a> with <Link> */}
       </div>
       <div className="books-container">
         {books.map((book) => (
@@ -79,5 +81,7 @@ const Bookstore = () => {
     </div>
   );
 };
+
+export { Book };
 
 export default Bookstore;
