@@ -1,9 +1,39 @@
 .home {
     display: flex;
     flex-direction: column;
-    z-index: 1;
-
+    align-items: center;
+    justify-content: flex-start; /* Align content to the top of the viewport */
+    height: 100vh; /* Use the full viewport height */
+    padding-top: 0px; /* Adjust as needed based on your navbar height */
 }
+
+/* .main-img {
+    display: flex;
+    flex-direction: column; /* Ensure content stacks vertically */
+   /* 
+    gap: 20px;
+    padding: 0 50px;
+
+    max-width: 100%; /* Ensures image does not exceed its original width */
+   /* height: auto; /* Maintains aspect ratio */
+    /* Optionally, you can set a maximum height */
+  /*  align-items: center; /* Center align content horizontally */
+    
+    
+
+/*}*/
+
+.main-img {
+    width: 100vw; /* Ensures image covers the entire viewport width */
+    height: 100vh; /* Ensures image covers the entire viewport height */
+    object-fit: cover; /* Ensures the image covers the container without distortion */
+    position: absolute; /* Positions the image at the top */
+    top: 0; /* Ensures the image starts from the top */
+    left: 0; /* Ensures the image starts from the left */
+    z-index: 1; /* Ensures the image is below the navbar */
+}
+
+
 .image-carousel {
     height: 55vh;
     

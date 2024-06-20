@@ -7,9 +7,15 @@ import { slides } from "../../data/carouselData.json";
 
 export const Home = () => {
     return (
-        <div className="home">
-            <div className="image-carousel">
-                <Carousel slides={slides} interval={3000} />
+        <div>
+            <div className="home">
+                <img
+                    className="main-img"
+                    src="../../../public/images/main_edited2.jpg"
+                />
+                {/* <div className="image-carousel">
+                    <Carousel slides={slides} interval={3000} />
+                </div> */}
             </div>
             <div className="genres">
                 <Bookstore />
