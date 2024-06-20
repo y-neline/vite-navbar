@@ -1,3 +1,4 @@
+// Bookstore.jsx
 import React, { useState } from "react";
 import { Link } from "react-router-dom";
 import "./Bookstore.css";
@@ -7,7 +8,6 @@ import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlin
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
 import ArrowRightIcon from '@mui/icons-material/ArrowRight';
-import { bookCollection } from "./BooksData"; // Import the unified book collection
 
 const Book = ({ title, author, price, imageUrl }) => {
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
@@ -56,17 +56,17 @@ const Book = ({ title, author, price, imageUrl }) => {
   );
 };
 
-const Bookstore = () => {
+const Bookstore = ({ books }) => {
   const [currentPage, setCurrentPage] = useState(1);
   const booksPerPage = 12; // 3 books per line, 4 lines
 
   // Calculate the books to be displayed on the current page
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
-  const currentBooks = bookCollection.slice(indexOfFirstBook, indexOfLastBook);
+  const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
 
   // Calculate the total number of pages
-  const totalPages = Math.ceil(bookCollection.length / booksPerPage);
+  const totalPages = Math.ceil(books.length / booksPerPage);
 
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
@@ -83,7 +83,7 @@ const Bookstore = () => {
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        {<ArrowLeftIcon/>}
+        <ArrowLeftIcon/>
       </button>
     );
 
@@ -153,7 +153,7 @@ const Bookstore = () => {
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        {<ArrowRightIcon/>}
+        <ArrowRightIcon/>
       </button>
     );
 
@@ -163,8 +163,8 @@ const Bookstore = () => {
   return (
     <div className="bookstore">
       <div className="books-container">
-        {currentBooks.map((book) => (
-          <Book key={book.title} {...book} />
+        {currentBooks.map(book => (
+          <Book key={book.id} {...book} />
         ))}
       </div>
       <div className="pagination">

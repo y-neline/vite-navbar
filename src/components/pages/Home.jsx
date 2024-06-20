@@ -2,6 +2,7 @@ import React from "react";
 import Carousel from "../Carousel/Carousel";
 import Bookstore from "../books/Bookstore";
 import "./Home.css";
+import { bookCollection } from "../books/BooksData"; // Import the unified book collection
 
 import { slides } from "../../data/carouselData.json";
 
@@ -18,7 +19,7 @@ export const Home = () => {
                 </div> */}
             </div>
             <div className="genres">
-                <Bookstore />
+            <Bookstore books={bookCollection} />
             </div>
         </div>
     );
