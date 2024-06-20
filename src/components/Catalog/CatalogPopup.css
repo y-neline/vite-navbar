@@ -43,15 +43,23 @@
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(150px, 1fr)); /* Adjusted column width */
     width: 100%;
+    font: bold;
 }
 
 .genres-list li {
     padding: 10px 3px;
     border-bottom: 1px solid #ddd;
     width: 100%;
+    font: bold;
     word-wrap: break-word; /* Ensures long genre names wrap within the column */
+    cursor: pointer;
 }
 
+.genres-list li:hover {
+    color: #05430b;
+    font: bold;
+    
+}
 .genres-list li:last-child {
     border-bottom: none;
 }

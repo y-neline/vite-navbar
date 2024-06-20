@@ -69,7 +69,7 @@ nav .search-box {
     width: 600px; /* Adjust the search box width */
     border-radius: 0.5rem;
     height: 100%; /* Ensure it takes the full height of the navbar */
-    background: rgb(210, 207, 207, 0.2);
+    background: rgb(210, 207, 207, 0.1);
 }
 
 nav .search-box input {

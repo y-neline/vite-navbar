@@ -1,13 +1,13 @@
 // Bookstore.jsx
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import { Link } from "react-router-dom";
 import "./Bookstore.css";
 import { useWishlist } from "../pages/Wishlist/WishlistContext";
 import { useCart } from "../pages/Cart/CartContext";
 import FavoriteBorderOutlinedIcon from "@mui/icons-material/FavoriteBorderOutlined";
-import FavoriteIcon from '@mui/icons-material/Favorite';
-import ArrowLeftIcon from '@mui/icons-material/ArrowLeft';
-import ArrowRightIcon from '@mui/icons-material/ArrowRight';
+import FavoriteIcon from "@mui/icons-material/Favorite";
+import ArrowLeftIcon from "@mui/icons-material/ArrowLeft";
+import ArrowRightIcon from "@mui/icons-material/ArrowRight";
 
 const Book = ({ title, author, price, imageUrl }) => {
   const { wishlist, addToWishlist, removeFromWishlist } = useWishlist();
@@ -42,13 +42,23 @@ const Book = ({ title, author, price, imageUrl }) => {
         <p>{title}</p>
         <span className="price">{price} ₸</span>
         <div className="button-container">
-          <button className={isInCart ? "remove-from-cart" : "add-to-cart"} onClick={handleCartClick}>
+          <button
+            className={isInCart ? "remove-from-cart" : "add-to-cart"}
+            onClick={handleCartClick}
+          >
             {isInCart ? "Убрать из корзины" : "В корзину"}
           </button>
           {isWishlisted ? (
-            <FavoriteIcon className="wishlist-icon" onClick={handleWishlistClick} style={{ color: 'red' }} />
+            <FavoriteIcon
+              className="wishlist-icon"
+              onClick={handleWishlistClick}
+              style={{ color: "red" }}
+            />
           ) : (
-            <FavoriteBorderOutlinedIcon className="wishlist-icon" onClick={handleWishlistClick} />
+            <FavoriteBorderOutlinedIcon
+              className="wishlist-icon"
+              onClick={handleWishlistClick}
+            />
           )}
         </div>
       </div>
@@ -58,32 +68,52 @@ const Book = ({ title, author, price, imageUrl }) => {
 
 const Bookstore = ({ books }) => {
   const [currentPage, setCurrentPage] = useState(1);
+  const [totalPages, setTotalPages] = useState(1);
   const booksPerPage = 12; // 3 books per line, 4 lines
+
+  useEffect(() => {
+    setTotalPages(Math.ceil(books.length / booksPerPage));
+  }, [books]);
 
   // Calculate the books to be displayed on the current page
   const indexOfLastBook = currentPage * booksPerPage;
   const indexOfFirstBook = indexOfLastBook - booksPerPage;
   const currentBooks = books.slice(indexOfFirstBook, indexOfLastBook);
 
-  // Calculate the total number of pages
-  const totalPages = Math.ceil(books.length / booksPerPage);
+  // Update total pages if books change
+  useEffect(() => {
+    setTotalPages(Math.ceil(books.length / booksPerPage));
+  }, [books, booksPerPage]);
 
+  // Handle page change
   const handlePageChange = (pageNumber) => {
     setCurrentPage(pageNumber);
   };
+
+  // Adjust current page if it becomes empty
+  useEffect(() => {
+    if (currentPage > 1 && currentBooks.length === 0) {
+      setCurrentPage(currentPage - 1);
+    }
+  }, [currentPage, currentBooks]);
 
   const renderPageNumbers = () => {
     const pageNumbers = [];
     const maxPageNumbersToShow = 5;
 
+    if (totalPages === 0) {
+      return <p>Empty!</p>;
+    }
+
     // Add "Previous" button
     pageNumbers.push(
-      <button className="nav-button"
+      <button
+        className="nav-button"
         key="prev"
         onClick={() => handlePageChange(currentPage - 1)}
         disabled={currentPage === 1}
       >
-        <ArrowLeftIcon/>
+        <ArrowLeftIcon />
       </button>
     );
 
@@ -113,7 +143,11 @@ const Bookstore = ({ books }) => {
       );
 
       if (currentPage > 3) {
-        pageNumbers.push(<span key="ellipsis1" className="ellipsis">...</span>);
+        pageNumbers.push(
+          <span key="ellipsis1" className="ellipsis">
+            ...
+          </span>
+        );
       }
 
       let startPage = Math.max(2, currentPage - 1);
@@ -132,7 +166,11 @@ const Bookstore = ({ books }) => {
       }
 
       if (currentPage < totalPages - 2) {
-        pageNumbers.push(<span key="ellipsis2" className="ellipsis">...</span>);
+        pageNumbers.push(
+          <span key="ellipsis2" className="ellipsis">
+            ...
+          </span>
+        );
       }
 
       pageNumbers.push(
@@ -148,12 +186,13 @@ const Bookstore = ({ books }) => {
 
     // Add "Next" button
     pageNumbers.push(
-      <button className="nav-button"
+      <button
+        className="nav-button"
         key="next"
         onClick={() => handlePageChange(currentPage + 1)}
         disabled={currentPage === totalPages}
       >
-        <ArrowRightIcon/>
+        <ArrowRightIcon />
       </button>
     );
 
@@ -163,13 +202,17 @@ const Bookstore = ({ books }) => {
   return (
     <div className="bookstore">
       <div className="books-container">
-        {currentBooks.map(book => (
-          <Book key={book.id} {...book} />
-        ))}
+        {currentBooks.length > 0 ? (
+          currentBooks.map((book) => <Book key={book.id} {...book} />)
+        ) : (
+          <p>Empty!</p>
+        )}
       </div>
-      <div className="pagination">
-        {renderPageNumbers()}
-      </div>
+      {totalPages > 0 && (
+        <div className="pagination">
+          {renderPageNumbers()}
+        </div>
+      )}
     </div>
   );
 };
