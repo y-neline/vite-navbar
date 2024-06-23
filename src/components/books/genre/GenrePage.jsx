@@ -2,7 +2,8 @@
 import React from "react";
 import { useParams } from "react-router-dom";
 import { bookCollection } from "../BooksData";
-import Bookstore, {Book} from "../Bookstore"; // Ensure this is the correct import
+import Bookstore from "../Bookstore"; // Ensure this is the correct import
+import Book from "../book/Book"
 import "./GenrePage.css"; // Ensure styles are applied
 
 const GenrePage = () => {

@@ -1,6 +1,7 @@
 import { Route, Routes } from "react-router-dom";
 import "./App.css";
 import { Navbar } from "./components/Navbar";
+import Footer from "./components/Footer/Footer";
 import { Account, Home } from "./components/pages";
 import Cart from "./components/pages/Cart/Cart"
 import Wishlist  from "./components/pages/Wishlist/Wishlist";
@@ -23,6 +24,7 @@ function App() {
                 <Route path="/genre/:genre" element={<GenrePage />} />
                 <Route path="/book/:title" element={<BookDetailsPage/>} />
             </Routes>
+            <Footer />
         </div>
         </CartProvider>
         </WishlistProvider>
