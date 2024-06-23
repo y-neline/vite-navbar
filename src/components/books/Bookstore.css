@@ -75,13 +75,10 @@
   /* margin-top: 5px; */
 }
 
-h2 {
-  padding-top: 10px;
-  text-align: center;
-  font-size: 45px;
-}
+
 
 .book-info p {
+  text-decoration: none; /* Remove underline */
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -182,3 +179,23 @@ h2 {
   padding: 10px 0;
   vertical-align: baseline; /* Align ellipses to the baseline */
 }
+
+.book-link-title{
+  text-decoration: none; /* Remove underline */
+
+}
+
+.book-title {
+  text-decoration: none !important; /* Try using !important to force override */
+}
+
+.book-link-title {
+  text-decoration: none; /* Remove underline */
+  color: inherit; /* Inherit text color */
+  cursor: pointer; /* Change cursor on hover to indicate it's clickable */
+}
+
+.book-link-title:hover {
+  color: #464646;
+}
+

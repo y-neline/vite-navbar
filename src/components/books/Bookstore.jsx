@@ -33,13 +33,18 @@ const Book = ({ title, author, price, imageUrl }) => {
   };
 
   return (
+    
     <div className="book">
+      <Link to={`/book/${encodeURIComponent(title)}`} className="book-link">
       <div className="store-img-container">
         <img src={imageUrl} alt={title} />
       </div>
+      </Link>
 
       <div className="book-info">
-        <p>{title}</p>
+      <Link to={`/book/${encodeURIComponent(title)}`} className="book-link-title">
+        <p className="book-title">{title}</p>
+        </Link>
         <span className="price">{price} ₸</span>
         <div className="button-container">
           <button
@@ -63,6 +68,7 @@ const Book = ({ title, author, price, imageUrl }) => {
         </div>
       </div>
     </div>
+    
   );
 };
 

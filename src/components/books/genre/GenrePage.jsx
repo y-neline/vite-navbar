@@ -3,7 +3,7 @@ import React from "react";
 import { useParams } from "react-router-dom";
 import { bookCollection } from "../BooksData";
 import Bookstore, {Book} from "../Bookstore"; // Ensure this is the correct import
-import "../Bookstore.css"; // Ensure styles are applied
+import "./GenrePage.css"; // Ensure styles are applied
 
 const GenrePage = () => {
     const { genre } = useParams();
@@ -14,7 +14,7 @@ const GenrePage = () => {
   
     return (
       <div>
-        <h2>{decodedGenre}</h2>
+        <h2 className="genre-name">{decodedGenre}</h2>
         <Bookstore books={filteredBooks} /> {/* Pass the filtered books to Bookstore */}
       </div>
     );
