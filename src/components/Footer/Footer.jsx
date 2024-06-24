@@ -2,7 +2,8 @@ import "./Footer.css";
 
 const Footer = () => {
   return (
-    <footer>
+    <div className="footer-wrapper">
+    <footer className="footer">
       <div className="footer-element"> {/* Generic element within footer */} </div>
       <div className="footer-content"> {/* Main content container */}
         <div className="contact-section">
@@ -26,6 +27,7 @@ const Footer = () => {
         </div>
       </div>
     </footer>
+    </div>
   );
 };
 

@@ -9,6 +9,7 @@ import { WishlistProvider } from "./components/pages/Wishlist/WishlistContext";
 import { CartProvider } from "./components/pages/Cart/CartContext";
 import GenrePage from "./components/books/genre/GenrePage"
 import BookDetailsPage from "./components/books/details/BookDetailsPage";
+import "./App.css"
 
 function App() {
     return (
@@ -24,7 +25,9 @@ function App() {
                 <Route path="/genre/:genre" element={<GenrePage />} />
                 <Route path="/book/:title" element={<BookDetailsPage/>} />
             </Routes>
+            <div className="footer">
             <Footer />
+            </div>
         </div>
         </CartProvider>
         </WishlistProvider>
