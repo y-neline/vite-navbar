@@ -1,0 +1,184 @@
+.bookstore {
+  display: flex;
+  flex-direction: column; /* Ensure content stacks vertically */
+  align-items: center; /* Center align content horizontally */
+  gap: 20px;
+  padding: 50px;
+  font-family: 'Inter', sans-serif;
+}
+
+.books-container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 80px;
+  justify-content: center; /* Center books in the container */
+  max-width: 1200px; /* Limit the width of books container */
+}
+
+.book {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 10px;
+  border-radius: 4px;
+  background-color: #fff;
+  height: 461px;
+  width: 286px;
+  position: relative;
+  font-family: 'Inter';
+}
+
+.bookstore .book:hover {
+  transform: scale(1.02); /* Slightly enlarge the image on hover (optional) */
+  transition: all 0.2s ease-in-out; /* Smooth transition effect */
+  box-shadow: 0 0 5px rgba(0, 0, 0, 0.2); /* Subtle shadow on hover */
+  border-color: #cccccc; /* More prominent border color on hover */
+}
+
+.bookstore .book img:hover {
+  cursor: pointer; /* Indicate clickable element */
+}
+
+
+.book .store-img-container{
+  align-items: center;
+  width: 281px;
+  height: 315px;
+  background-color: #fff;
+}
+
+.book .store-img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit:contain;
+  margin: 0 auto;
+}
+
+.book-info {
+  text-align: left;
+  width: 100%;
+  margin-top: 5px;
+  padding: 5px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.button-container {
+  display: flex;
+  justify-content: space-between;
+}
+
+.book-info .price {
+  color: #000000;
+  font-size: 31px;
+  /* margin-top: 5px; */
+}
+
+h2 {
+  padding-top: 10px;
+  text-align: center;
+  font-size: 45px;
+}
+
+.book-info p {
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  font-size: 18px;
+  margin-bottom: 5px;
+}
+
+
+.button-container button.add-to-cart {
+  background-color: #464646;
+  color: #fff;
+  padding: 10px 60px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  order: 1;
+  min-width: 185px;
+
+ 
+}
+
+
+.button-container button.remove-from-cart {
+  background-color: #878787;
+  color: #fff;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 7px;
+  cursor: pointer;
+  position: absolute;
+  bottom: 10px;
+  order: 1;
+  white-space: nowrap;
+  width: auto;
+  min-width: 185px;
+}
+
+.bookstore .button-container button.add-to-cart:hover {
+  background-color: #000;
+}
+
+.book-info .remove-from-cart:hover {
+  background-color: #000;
+}
+
+
+
+.button-container .wishlist-icon {
+  position: absolute;
+  bottom: 8px;
+  color: #464646;
+  cursor: pointer;
+  order: 2;
+  z-index: 0;
+  right: 20px;
+  font-size: 46px; /* Increase the font size */
+  transition: transform 0.2s ease-in-out; /* Add transition for smooth scaling */
+}
+
+.bookstore .button-container .wishlist-icon:hover {
+  color: #999;
+  transform: scale(1.1);
+  transition: all 0.2s ease-in-out;
+}
+
+.pagination {
+  display: flex;
+  justify-content: center;
+  margin-top: 20px; /* Add some margin between books and pagination */
+  width: 100%; /* Ensure pagination spans full width */
+}
+
+.pagination button {
+  margin: 0 5px;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  background-color: #fff;
+  color: #000;
+  
+  font-size: 15px; /* Increase the font size */
+  transition: background-color;
+}
+
+.pagination button.active {
+  background-color: #a5a5a5;
+}
+
+.pagination button:hover {
+  background-color: #cecdcd;
+}
+
+.pagination .ellipsis {
+  margin: 0 5px;
+  padding: 10px 0;
+  vertical-align: baseline; /* Align ellipses to the baseline */
+}
